@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    <link rel="stylesheet" href="javascript.css">
+
+</head>
+<body>
+    <header>
+        <h1 class="heading">Mobile Application Development</h1>
+    </header>
+        <div class ="menu">
+            <nav class="navbar">
+                <a class="nav1" target=""  href="index.html">Home</a>
+                <a class="nav1" target="" href="javascript.html">JScript</a>
+                <a class="nav1" target="_blank" href="#">Json</a>
+                <a class="nav1" target="_blank" href="#">Ajax</a>
+                <a class="nav1" target="_blank" href="#">Angular</a>
+            </nav>
+        </div>
+        <h1>JavaScript</h1>
+<div class="container">
+    <div class="box1 sidelinks">
+        <h2 id="sidebar1">Quick Links</h2>
+            <a id="sidebar" href="#introduction">Introduction</a>
+            <a id="sidebar" href="#comparison">Comparison</a>
+            <a id="sidebar" href="#data">Variables & Data Types</a>
+            <a id="sidebar" href="#array">Arrays</a>
+            <a id="sidebar" href="#object">Objects</a>
+            <a id="sidebar" href="#function">Functions</a>
+            <a id="sidebar" href="#dom">DOM</a>
+            <a id="sidebar" href="#arrow">Arrow Function</a>
+            <a id="sidebar" href="#restParam">Rest Parameter</a>
+            <a id="sidebar" href="#contact">Contact Us</a>
+    </div>
+
+    <div class="box intro" id="introduction">
+        <h2>Introduction</h2>
+        <p>JavaScript is a versatile and widely-used programming language known for adding interactivity to web pages. Developed by Netscape in the mid-1990s, JavaScript is essential 
+            in web development, enabling dynamic and responsive user interfaces. To incorporate JavaScript into HTML, include your code within "script" tags in the HTML document.</p>
+        <strong>Examples:</strong>
+        <pre>
+            <code>
+                &lt;button onclick="introductionFunction()"&gt;Button for Introduction&lt;/button&gt;
+                &lt;script&gt;
+                    function introductionFunction() 
+                    {
+                        alert('Button for Introduction clicked!');
+                    }
+                &lt;/script&gt;
+
+            </code>
+        </pre>
+        <button onclick="introductionFunction()">Button for Introduction</button>       
+        <script>
+            function introductionFunction() {
+                alert('Button for Introduction clicked!');
+            }
+        </script>
+        <p>The code includes an HTML button with an associated JavaScript function. When the button is clicked, it triggers the `introductionFunction()`, which displays 
+            an alert stating 'Button for Introduction clicked!'.</p>
+    </div>
+    <div class="box comp" id="comparison">
+        <h2>Advantages of JavaScript</h2>
+        <ul>
+            <li>Enhanced User Interfaces: JavaScript boosts the interactivity of web pages, creating more engaging and dynamic user interfaces.</li>
+            <li>Accessible Learning Curve: JavaScript is beginner-friendly, with a syntax that resembles other widely-used programming languages, 
+                making it easier for newcomers to pick up.</li>
+            <li>Universal Support: JavaScript enjoys widespread browser support, ensuring its compatibility across various platforms, contributing 
+                to its status as a standard web technology.</li>
+            <li>Versatility Across the Stack: JavaScript's flexibility extends to both front-end and back-end development, allowing developers 
+                to use the language throughout the entire web development stack.</li>
+        </ul>
+        <h2>Disadvantages of JavaScript</h2>
+        <ul>
+            <li>SBrowser Compatibility Challenges: Ensuring consistent behavior across different browsers can be difficult, requiring developers 
+                to address variations in implementation and standards.</li>
+            <li>Security Risks: JavaScript's execution on the client side introduces security concerns, such as the risk of Cross-Site Scripting 
+                (XSS) attacks, necessitating secure coding practices and input validation.</li>
+            <li>Single-Threaded Limitations: Operating in a single-threaded environment, JavaScript may face challenges in handling 
+                computationally intensive tasks, potentially causing performance bottlenecks.</li>
+            <li>Browser-Dependent Performance: The performance of JavaScript code relies on the capabilities of individual browsers, 
+                leading to variations that can impact the speed and responsiveness of web applications.</li>
+        </ul>
+    </div>
+    <div class="box dat" id="data">
+        <h2>Variables & Data Types:</h2>
+        <p>Variables in JavaScript serve as containers for storing data values. They are declared using keywords such as var, let, or const. Data types include primitive types like 
+            strings, numbers, booleans, as well as more complex types such as objects and arrays.</p>
+        <h2>Data Types</h2>
+        <ol>
+            <li>var: Variables declared with <b>'var'</b> are function-scoped, which means they are limited to the function they are declared in. 
+                They are also hoisted to the top of their scope.</li>
+            <li>let: <b>'let'</b> is block-scoped and allows the variable to be reassigned. It is not hoisted to the top of the block.</li>
+            <li>const: Similar to <b>'let'</b> in terms of block-scoping, but variables declared with <b>'const'</b> cannot be reassigned after declaration. 
+                It is commonly used for values that should not be changed.</li>  
+        </ol>
+        <strong>Examples:</strong>
+        <pre>
+            <code>
+                // Declare a variable using 'var'
+
+                    var exampleVar = "I am a variable declared with 'var'.";
+                    document.write(exampleVar + '&lt;br&gt;');
+
+                // Declare a variable using 'let'
+
+                    let exampleLet = "I am a variable declared with 'let'.";
+                    document.write(exampleLet + '&lt;br&gt;');
+
+                // Changed a value using 'let'
+
+                    exampleLet = "I can be reassigned.";
+                    document.write(exampleLet + '&lt;br&gt;');
+
+                // Declare a variable using 'const'
+
+                    const exampleConst = "I am a variable declared with 'const'.";
+                    document.write(exampleConst + '&lt;br&gt;');
+
+                // Uncommenting the line below will result in an error because 'const' variables cannot be reassigned.
+
+                    exampleConst = "I cannot be reassigned.";
+                    document.write(exampleConst);  
+            </code>
+        </pre>
+        <img src="variable.png" alt="Alert Message" width="200" height="200">
+    </div>
+    
+    <div class="box arr" id="array">
+        <h2>Arrays</h2>
+        <p>An array in JavaScript is a data structure that allows you to store multiple values within a single variable. Elements can be of any data type and are stored in a sequential 
+            order with each element identified by an index.</p>  
+            <strong>Examples:</strong>
+            <pre>
+            <code>
+                // Declare an array
+                var fruits = ['apple', 'orange', 'banana','grapes','kiwi'];
+            </code>
+        </pre>     
+        <h2>Types of Array:</h2>
+        <ol>
+            <li>Accessing the full array:
+                <pre>
+                    <code>
+                        function accessFullArray() 
+                        {
+                            alert('Full Array: ' + fruits.join(', '));
+                        }
+                    </code>
+                </pre>
+                <button onclick="accessFullArray()">Click to Access Full Array</button>
+            </li>
+            <br>
+            <li>Accessing a particular element: <br>
+                <pre>
+                    <code>
+                        function accessElement() 
+                        {
+                            alert('Accessed Element: ' + fruits[2]);
+                        }
+                    </code>
+                </pre>
+                <button onclick="accessElement()">Click to Access Element</button></li>
+            </li>
+            <br>
+            <li>Removing the last element using the <b>"pop"</b> method:
+                <pre>
+                    <code>
+                        function removeLastElement() 
+                        {
+                            alert('Removed Last Element: ' + fruits.pop());
+                        }
+                    </code>
+                </pre>
+                <button onclick="removeLastElement()">Click to Remove Last Element</button>
+            </li>
+            <br>
+            <li>Adding a new element to the end using the <b>"push"</b> method: 
+                <pre>
+                    <code>
+                        function addNewElement() 
+                        {
+                            fruits.push('pineapple');
+                            alert('Added New Element: ' + fruits[fruits.length - 1]);
+                        }
+                    </code>
+                </pre>
+                <button onclick="addNewElement()">Click to Add New Element</button>
+            </li>
+            <br>
+            <li>Removing elements starting from index 1, removing 2 elements, and adding new elements using the <b>"splice"</b> method: 
+                <pre>
+                    <code>
+                        function modifyArray() 
+                        {
+                            fruits.splice(1, 2, 'mango', 'strawberry');
+                            alert('Modified Array: ' + fruits.join(', '));
+                        }
+                    </code>
+                </pre>
+                <button onclick="modifyArray()">Click to Modify Array</button>
+            </li>
+            <br>
+            <li>Finding the length of the array using the <b>length</b> method: 
+                <pre>
+                    <code>
+                        function findArrayLength() 
+                        {
+                            alert('Array Length: ' + fruits.length);
+                        }
+                    </code>
+                </pre>
+                <button onclick="findArrayLength()">Click to Find Array Length</button>    
+            </li>
+        </ol>
+        <script>
+            // Declare an array
+            var fruits = ['apple', 'orange', 'banana','grapes','kiwi'];
+            // Function to access the full array
+            function accessFullArray() 
+            {
+                alert('Full Array: ' + fruits.join(', '));
+            }
+            // Function to access a particular element
+            function accessElement() {
+                alert('Accessed Element: ' + fruits[2]);
+            }
+        
+            // Function to remove the last element using the "pop" method
+            function removeLastElement() {
+                alert('Removed Last Element: ' + fruits.pop());
+            }
+        
+            // Function to add a new element to the end using the "push" method
+            function addNewElement() {
+                fruits.push('pineapple');
+                alert('Added New Element: ' + fruits[fruits.length - 1]);
+            }
+        
+            // Function to remove elements, add new elements using the "splice" method
+            function modifyArray() {
+                fruits.splice(1, 2, 'mango', 'strawberry');
+                alert('Modified Array: ' + fruits.join(', '));
+            }
+            // Function to find the length of the array
+            function findArrayLength() {
+                alert('Array Length: ' + fruits.length);
+            }
+        </script>
+    </div>
+    <!--<img src="array.png" alt="Array" id="array1">-->
+    <div class="box obj" id="object">
+        <h2>Objects</h2>
+        <p>Objects in JavaScript are complex data types that allow you to group related data and functions together.<br><br> 
+            Objects consist of key-value pairs, where each key is a property or method of the object.</p>
+        <p>
+        <h3>You can access object properties in two ways:</h3>
+        1. objectName.propertyName
+        <br>
+        2. objectName["propertyName"]
+        </p>
+        <strong>Examples:</strong>
+        <pre>
+            <code>
+                // Create an object representing a person
+                    var person = 
+                    {
+                        firstName: "John",
+                        lastName: "Doe",
+                        age: 25,
+                        greet: function() 
+                        {
+                        alert("Hello, my name is " + this.firstName + " " + this.lastName + ".");
+                        }
+                    };
+                    
+                    &lt;button onclick="displayProperties()"&gt;Click to Display Properties&lt;/button&gt;
+                    
+                    &lt;button onclick="callGreet()"&gt;Click to Call Greet Method&lt;/button&gt;
+                    
+                // Function to access and display properties of the person object
+                    function displayProperties() 
+                    {
+                    alert("First Name: " + person.firstName +
+                        "\nLast Name: " + person['lastName'] +
+                        "\nAge: " + person.age);
+                    }
+                    
+                    <button onclick="displayProperties()">Click to Display Properties</button>
+
+                // Function to call the greet method of the person object
+                    function callGreet() 
+                    {
+                        person.greet();
+                    }
+
+                    <button onclick="callGreet()">Click to Call Greet Method</button>
+            </code>
+        </pre>
+        <script>
+             // Create an object representing a person
+             var person = {
+                    firstName: "John",
+                    lastName: "Doe",
+                    age: 25,
+                    greet: function() {
+                    alert("Hello, my name is " + this.firstName + " " + this.lastName + ".");
+                    }
+                };
+            // Function to access and display properties of the person object
+            function displayProperties() {
+                alert("First Name: " + person.firstName +
+                    "\nLast Name: " + person['lastName'] +
+                    "\nAge: " + person.age);
+            }
+
+            // Function to call the greet method of the person object
+            function callGreet() {
+                person.greet();
+            }
+        </script>
+    </div> 
+    
+    <div class="box func" id="function">
+        <h2>Functions</h2>
+        <p>Definition: A JavaScript function is defined with the function keyword, followed by a name, followed by parentheses ().</p>
+        <strong>Basic Syntax:</strong>
+        <pre>
+            <code>
+                function name(parameter1, parameter2, parameter3) 
+                {
+                    // code to be executed
+                }
+            </code>
+        </pre>
+        <p>Function names can contain letters, digits, underscores, and dollar signs (same rules as variables).
+            <br>The parentheses may include parameter names separated by commas: (parameter1, parameter2, ...)</p>
+        <strong>Examples:</strong>
+        <pre>
+            <code>
+                1. function greet(name) 
+                    {
+                        alert('Hello, ' + name + '!');
+                    }
+                     
+                    &lt;button onclick="greet('Harshdeep')&gt;Click to Call Greet Function&lt;/button&gt;
+
+                    <button onclick="greet('Harshdeep')">Click to Call Greet Function</button>
+
+                2.function processNumbers(number1, number2) 
+                    {
+                    alert('Number 1:', number1, 'Number 2:', number2);
+                    }
+
+                    &lt;button onclick="processNumbers(1, 5)"&gt;Click to Call Process Numbers Function&lt;/button&gt;
+
+                    <button onclick="processNumbers(1, 5)">Click to Call Process Numbers Function</button>
+            </code>
+        </pre>
+        <script>
+            // Define functions
+            function greet(name) 
+            {
+                alert('Hello, ' + name + '!');
+            }
+            
+            function processNumbers(number1, number2) 
+            {
+                alert('Number 1: ' + number1 + ', Number 2: ' + number2);
+            }
+            
+        </script>
+        <h3>The code consists of two JavaScript functions:</h3>
+        <p>1. greet(name): This function takes a name as a parameter and triggers an alert displaying a personalized greeting, such as 'Hello, Harshdeep!' when called with greet('Harshdeep').
+            <br><br>
+            2. processNumbers(number1, number2): Here, a function is defined to handle two numbers. When invoked with processNumbers(5, 10), an alert is displayed with the message 'Number 1: 5, Number 2: 10', showcasing the values passed to the function.</p>
+    </div>
+    <div class="box domi" id="dom">
+        <h2>Document Object Model (DOM)</h2>
+        <p>The Document Object Model (DOM) serves as a vital programming interface for web documents, offering a structured representation of the HTML or XML document as a tree-like 
+            hierarchy. Each node in this tree corresponds to an element within the document, enabling dynamic manipulation of structure, style, and content by programs.</p>
+            
+        <h2>Key Concepts in the DOM</h2>
+
+        <h3>Elements:</h3>
+        <dd>    HTML elements, such as "div," "p," and "span," are nodes in the DOM. These elements are organized hierarchically, establishing parent-child relationships.</dd>
+
+        <h3>Nodes:</h3>
+        <dd>    Nodes represent individual entities in the DOM tree, encompassing elements, attributes, or textual content. Main node types include element nodes, attribute nodes, and text nodes.</dd>
+
+        <h3>Attributes:</h3>
+        <dd>    HTML element attributes (e.g., id, class, src) are represented as attributes of corresponding element nodes in the DOM.</dd>
+
+        <h3>Methods for Accessing Elements:</h3>
+        <dd>    1.<code>getElementById(id)</code>: Returns the element with the specified ID.</dd>
+        <dd>    2.<code>getElementsByClassName(className)</code>: Returns a collection of elements with the specified class name.</dd>
+        <dd>    3.<code>getElementsByTagName(tagName)</code>: Returns a collection of elements with the specified tag name.</dd>
+
+        <h3>Manipulating Content:</h3>
+        <dd>    1.<code>innerHTML</code>: Modifies the HTML content within an element.</dd>
+        <dd>    2.<code>style</code>: Changes the design of the content.</dd>
+        <dd>    3.<code>textContent</code>: Modifies the text content of an element similar to the code.</dd>
+        <p></p>
+        <strong>Examples:</strong>
+        <pre>
+            <code>
+                &lt;p id="myParagraph"&gt;Initial content&lt;/p&gt;
+
+                //Button to trigger the updateContentAndStyle function
+
+                    &lt;button onclick="updateContentAndStyle()"&gt;Click to Update Content and Style&lt;/button&gt;
+
+                &lt;script&gt;
+
+                    // Function to update content and style
+                    
+                    function updateContentAndStyle() 
+                    {
+                        // Accessing an element by ID
+                        var paragraph = document.getElementById('myParagraph');
+
+                        // Modifying innerHTML
+                        paragraph.innerHTML = 'New content added dynamically!';
+
+                        // Changing style properties
+                        paragraph.style.backgroundColor = '#f2f2f2';
+                        paragraph.style.padding = '10px';
+                        paragraph.style.border = '2px solid #333';
+                    }
+
+                &lt;/script&gt;
+                <h3>Check the Functionality:</h3>
+                <!-- Button to trigger the updateContentAndStyle function -->
+                <button onclick="updateContentAndStyle()">Click to Update Content and Style</button>
+                <h2 id="myParagraph">Initial content of the DOM</h2 >
+                <script>
+                    // Function to update content and style
+                    function updateContentAndStyle() 
+                    {
+                        // Accessing an element by ID
+                        var paragraph = document.getElementById('myParagraph');
+
+                        // Modifying innerHTML
+                        paragraph.innerHTML = 'New content added dynamically! with the help of DOM.';
+
+                        // Changing style properties
+                        paragraph.style.backgroundColor = 'skyblue';
+                        paragraph.style.color= 'red';
+                    }
+                </script>
+            </code>
+        </pre>
+    </div>
+    <div class="box arro" id="arrow">
+        <h2>Arrow Functions</h2>
+        <p>Allows you to write function expressions without the normal function and return keywords.</p>
+        <strong>Examples:</strong>
+        <pre>
+            <code>
+                1.  // Arrow functions
+                    var ageTest = (name, age) => 
+                    {
+                        if (age > 18) 
+                        {
+                            alert(`${name} / Adult`);
+                        } 
+                        else 
+                        {
+                            alert(`${name} / Minor`);
+                        }
+                    }
+                    // Function call
+                    ageTest("Harsh", 19); 
+                
+                2.  var sum = (x, y) => alert(x + y); // displaying sum using alert
+                    sum(3, 4);
+
+                //Button to trigger the arrow function examples
+                &lt;button onclick="runArrowFunctionExamples()"&gt;Click to Run Arrow Function Examples&lt;/button&gt;
+            </code>
+        </pre>
+        <!-- Button to trigger the arrow function examples -->
+        <button onclick="runArrowFunctionExamples()">Click to Run Arrow Function Examples</button>
+
+        <script>
+            // Function to run arrow function examples
+            function runArrowFunctionExamples() 
+            {
+                // Arrow function example 1
+                var ageTest = (name, age) => 
+                {
+                    if (age > 18) 
+                    {
+                        alert(`${name} / Adult`);
+                    } 
+                    else 
+                    {
+                        alert(`${name} / Minor`);
+                    }
+                }
+                // Function call
+                ageTest("Harsh", 19);
+
+                // Arrow function example 2
+                var sum = (x, y) => alert(x + y); // displaying sum using alert
+                sum(3, 4);
+            }
+        </script>
+        <h3>The code presents two examples of arrow functions in JavaScript:</h3>
+        <p>1. `ageTest(name, age)`: An arrow function checking if a person is an adult or a minor based on their age. Invoking `ageTest("Harsh", 19)` triggers an alert indicating 
+            'Harsh / Adult'.
+            <br><br>
+            2. `sum(x, y)`: An arrow function computing the sum of two numbers and displaying it using an alert. Calling `sum(3, 4)` results in an alert displaying the sum, 
+            in this case, '7'.
+        </p>
+    </div>
+    <div class="box restp" id="restParam">
+        <h2>Rest parameters</h2>
+        <p>The rest parameter in JavaScript allows you to represent an indefinite number of arguments as an array. It is indicated by the ellipsis <strong>(...) </strong>followed by the parameter name.</p>
+        <strong>Examples: Function using rest parameters</strong>
+        <pre>
+            <code>
+                1.  function sortColours(...colourNames) 
+                    {
+                        return colourNames.sort(); 
+                    }
+                    alert(sortColours('red', 'blue', 'green'));
+            
+                2.  function sum(...numbers) 
+                    {
+                        return numbers.reduce((total, num) => total + num, 0);
+                    }
+                
+                    // Example usage
+                    var result = sum(1, 2, 3, 4, 5);
+                
+                    // Displaying result
+                    alert('Sum: ' + result);
+
+            //Button to trigger the rest parameter examples
+            &lt;button onclick="runRestParameterExamples()"&gt;Click to Run Rest Parameter Examples&lt;/button&gt;
+            </code>
+        </pre>
+        <!-- Button to trigger the rest parameter examples -->
+    <button onclick="runRestParameterExamples()">Click to Run Rest Parameter Examples</button>
+
+    <script>
+        // Function to run rest parameter examples
+        function runRestParameterExamples() 
+        {
+            // Example 1: Sorting colors
+            function sortColours(...colourNames) 
+            {
+                return colourNames.sort(); 
+            }
+            alert('Sort Colors: ' + sortColours('red', 'blue', 'green'));
+
+            // Example 2: Summing numbers
+            function sum(...numbers) 
+            {
+                return numbers.reduce((total, num) => total + num, 0);
+            }
+        
+            // Example usage
+            var result = sum(1, 2, 3, 4, 5);
+        
+            // Displaying result
+            alert('Sum: ' + result);
+        }
+    </script>
+    <h3>The code features two examples of JavaScript functions utilizing rest parameters:</h3>
+    <p>
+        1. sortColours(...colourNames): A function that takes an indefinite number of color names as arguments using rest parameters and returns them sorted. 
+        The alert alert(sortColours('red', 'blue', 'green')) displays the sorted colors.
+        <br><br>
+        2. sum(...numbers): A function using rest parameters to calculate the sum of an arbitrary number of numerical values. 
+        The example usage var result = sum(1, 2, 3, 4, 5) calculates the sum and alerts 'Sum: 15'.
+    </p>
+    </div>
+
+</div>
+</body>
+    <footer>
+        <div class="foot foot-end" id="contact">
+            <a class="email" href="contact.html">Contact Us</a>
+            <p>Phone: 123-456-7890</p>
+            <a class="email" href="mailto:aswad.azan42@gmail.com">Click to Email: aswad.azan42@gmail.com</a>
+            <p>Address: 1212 Sheridan College Drive</p>
+        </div>
+        <p>Copyright &#169 2024. All rights Reserved <a target="_blank" href="https://www.sheridancollege.ca/en">Sheridan College.</a></p>
+    </footer>
+</html>
+
+
+
+
+
+
+
+
+
+

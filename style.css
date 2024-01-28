@@ -1,0 +1,169 @@
+body, h1, h2, ul, p {
+    margin: 0;
+    padding: 0;
+}
+body{
+  background-color: beige;
+}
+.heading{
+    text-align: center;
+    color: black;
+    font-size: 35px;
+
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.navbar{ 
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    background-color:black; 
+    height: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    justify-content: space-evenly;
+    flex-direction: row;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+.nav1{
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+}
+.container{
+    height: 96%;
+    width:96%;
+    display: flex;
+    flex-wrap: nowrap;
+    margin: auto;
+    display: grid;
+    grid-gap: 30px;
+    grid-column-gap: 50px;
+    grid-template-columns: 1.5fr 2fr 8fr ;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+    "sidelinks img1 intro"
+    "pic5 img2 adv"
+    "pic4 img3 disadv"
+    "pic3 img4 use"
+    ". img5 examp";
+    margin-bottom: 40px;
+    position: relative;
+    
+}
+@media screen and (max-width: 1300px){
+  .container{
+      height: 90%;
+      width: 90%;
+      display: flex;
+      flex-direction: column;
+      grid-template-columns: 1fr 9fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+      grid-template-areas:
+      " sidelinks intro "
+      " . adv"
+      " . disadv"
+      " . use"
+      " . exam";
+
+
+  }
+  .img1, .img2, .img3, .img4, .img5, .pic5, .pic4, .pic3{
+  display: none;
+}
+}
+#sidebar{
+    text-decoration: none;
+}
+.box{
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    padding: 50px;
+    box-shadow: 1px 2px 20px;
+    transition: 1s;
+}
+.box1{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content:center;
+    text-decoration: none;
+
+}
+#sidebar{
+  color: purple;
+  font-size: 30px;
+}
+#sidebar1{
+  color: black;
+  font-size: 40px;
+}
+.box:hover{
+    transform: scale(1.04);
+}
+img{
+    width: 100%;
+    height: auto;
+}
+
+.para-fonts{
+    font-size: 22px;
+    padding: 5px;
+}
+.sidelinks {
+    grid-area: sidelinks;
+  }
+  .intro {
+    grid-area: intro;
+    color: white;
+    background-color: black;
+  }
+  .adv {
+    grid-area: adv;
+    color: white;
+    background-color: black;
+  }
+  .disadv {
+    grid-area: disadv;
+    color: white;
+    background-color: black;
+  }
+  .use {
+    grid-area: use;
+    color: white;
+    background-color: black;
+  }
+  .examp {
+    grid-area: examp;
+    color: white;
+    background-color: black;
+  }
+  .img1{
+    grid-area: img1;
+  }
+  .img2{
+    grid-area: img2;
+  }
+  .img3{
+    grid-area: img3;
+  }
+  .img4{
+    grid-area: img4;
+  }
+  .img5{
+    grid-area: img5;
+  }
+.foot{
+    border: thin solid;
+    text-align: center;
+    border-radius: 10px;
+    text-decoration: none;
+    margin-right: 9px;
+    padding-top: 10px;
+}
+.email{
+    text-decoration: none;
+    color: black;
+}
